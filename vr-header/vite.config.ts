@@ -1,7 +1,22 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { federation } from '@module-federation/vite'
 
-// https://vitejs.dev/config/
+import { dependencies } from './package.json'
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    federation({
+      name: 'vr-header',
+      remotes: {},
+      exposes: {},
+      shared: {
+        react: {
+          requiredVersion: dependencies.react,
+          singleton: true
+        }
+      }
+    }),
+    react()
+  ],
 })
