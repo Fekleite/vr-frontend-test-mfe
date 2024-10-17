@@ -1,7 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { federation } from '@module-federation/vite'
 
-// https://vitejs.dev/config/
+import { dependencies } from './package.json'
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    federation({
+      name: 'vr-commerce',
+      remotes: {},
+      exposes: {},
+      filename: 'remoteEntry.js',
+      shared: {
+        react: {
+          requiredVersion: dependencies.react,
+          singleton: true
+        }
+      }
+    }),
+    react()
+  ],
 })
