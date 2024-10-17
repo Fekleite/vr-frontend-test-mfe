@@ -1,22 +1,18 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { federation } from '@module-federation/vite'
-
-import { dependencies } from './package.json'
+import ModuleFederationPlugin from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
+  build: {
+		target: 'chrome89',
+	},
   plugins: [
-    federation({
-      name: 'vr-commerce',
-      remotes: {},
-      exposes: {},
-      filename: 'remoteEntry.js',
-      shared: {
-        react: {
-          requiredVersion: dependencies.react,
-          singleton: true
-        }
-      }
+    ModuleFederationPlugin({
+      name: "vr-commerce",
+      remotes: {
+        'vr-header': "http://localhost:5174/assets/remoteEntry.js",
+      },
+      shared: ["react", "react-dom"]
     }),
     react()
   ],
