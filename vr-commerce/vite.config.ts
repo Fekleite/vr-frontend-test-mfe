@@ -5,6 +5,8 @@ import ModuleFederationPlugin from "@originjs/vite-plugin-federation";
 export default defineConfig({
   build: {
 		target: 'chrome89',
+    minify: false,
+    cssCodeSplit: false,
 	},
   plugins: [
     ModuleFederationPlugin({
@@ -12,7 +14,7 @@ export default defineConfig({
       remotes: {
         'vr-header': "http://localhost:5174/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"]
+      shared: ["react", "react-dom", "tailwindcss"]
     }),
     react()
   ],
