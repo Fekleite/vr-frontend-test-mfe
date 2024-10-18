@@ -1,7 +1,7 @@
 import logo from '../../assets/logo-white.png'
 import { BagIcon } from '../BagIcon'
 
-export function Header() {
+export default function Header() {
   return (
     <header className='w-full bg-brand py-4'>
       <div className='w-full max-w-[1440px] px-12 mx-auto flex justify-between items-center'>
