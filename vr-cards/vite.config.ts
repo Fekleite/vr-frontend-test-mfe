@@ -13,7 +13,8 @@ export default defineConfig({
       name: "vr-cards",
       filename: "remoteEntry.js",
       exposes: {
-        "./Cards": "./src/components/Cards"
+        "./Cards": "./src/components/Cards",
+        "./CardsWrapper": "./src/components/CardsWrapper",
       },
       shared: ["react", "react-dom", "tailwindcss"],
     }),
