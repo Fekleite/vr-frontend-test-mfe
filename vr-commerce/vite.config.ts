@@ -13,6 +13,7 @@ export default defineConfig({
       name: "vr-commerce",
       remotes: {
         'vr-header': "http://localhost:5174/assets/remoteEntry.js",
+        'vr-footer': "http://localhost:5175/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "tailwindcss"]
     }),
