@@ -20,7 +20,7 @@ export default defineConfig({
       exposes: {
         './store': "./src/store"
       },
-      shared: ["react", "react-dom", "tailwindcss"]
+      shared: ["react", "react-dom", "tailwindcss", "zustand"]
     }),
     react()
   ],

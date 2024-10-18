@@ -8,9 +8,12 @@ import { BagIcon } from '../BagIcon'
 import { Modal } from '../Modal'
 import { CartItem } from '../CartItem'
 
+import { useStore } from 'vr-commerce/store'
+
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false)
-  const cartItems: IProduct[] = [] // pegar da store
+
+  const { cartItems } = useStore()
 
   function handleOpenCart() {
     setIsCartOpen(true)
@@ -37,14 +40,14 @@ export default function Header() {
           </button>
 
           <span className='absolute -right-2 -top-2 bg-neutral-50 w-5 h-5 rounded-full text-xs text-neutral-900 font-semibold flex justify-center items-center'>
-            {cartItems.length}
+            {cartItems?.length}
           </span>
         </div>
       </div>
 
       <Modal title='Compras' isOpen={isCartOpen} onClose={handleCloseCart}>
         <div className='h-full max-h-full overflow-y-auto flex flex-col gap-2'>
-          {cartItems.map((cartItem: IProduct) => (
+          {cartItems?.map((cartItem: IProduct) => (
             <CartItem product={cartItem} />
           ))}
         </div>
