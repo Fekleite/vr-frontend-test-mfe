@@ -48,6 +48,6 @@ export function Modal({ title, children, isOpen, onClose }: IModalProps){
         </div>
       </div>
     </>,
-    document.getElementById('modal-root')!
+    document.body
   )
 }
