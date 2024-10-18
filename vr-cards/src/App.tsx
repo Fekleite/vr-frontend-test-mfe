@@ -1,5 +1,9 @@
+import Cards from "./components/Cards";
+
 export function App() {
   return (
-    <div>Product list</div>
+    <div>
+      <Cards />
+    </div>
   )
 }
