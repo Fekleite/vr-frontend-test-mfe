@@ -6,6 +6,8 @@ const Header = lazy(async () => import("vr-header/Header"));
 const Footer = lazy(async () => import("vr-footer/Footer"));
 // @ts-ignore
 const Cards = lazy(async () => import("vr-cards/Cards"));
+// @ts-ignore
+const CardsWrapper = lazy(async () => import("vr-cards/CardsWrapper"));
 
 export function App() {
   return (
@@ -13,7 +15,9 @@ export function App() {
       <Header />
 
       <div className="w-full my-10">
-        <Cards />
+        <CardsWrapper>
+          <Cards />
+        </CardsWrapper>
       </div>
 
       <Footer />
