@@ -1,7 +1,10 @@
 import { useState } from 'react'
+
 import logo from '../../assets/logo-white.png'
+
 import { BagIcon } from '../BagIcon'
 import { Modal } from '../Modal'
+import { CartItem } from '../CartItem'
 
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -13,6 +16,20 @@ export default function Header() {
   function handleCloseCart() {
     setIsCartOpen(false)
   }
+
+  // Apenas exemplo
+  const products = [
+    {
+      imgUrl: "",
+      name: "Nome do produto",
+      price: 99
+    },
+    {
+      imgUrl: "",
+      name: "Nome do produto",
+      price: 99
+    }
+  ]
 
   return (
     <header className='w-full bg-brand py-4'>
@@ -32,8 +49,12 @@ export default function Header() {
         </div>
       </div>
 
-      <Modal title='Compras' isOpen={isCartOpen} onClose={handleCloseCart} >
-        Testando
+      <Modal title='Compras' isOpen={isCartOpen} onClose={handleCloseCart}>
+        <div className='h-full max-h-full overflow-y-auto flex flex-col gap-2'>
+          {products.map(product => (
+            <CartItem product={product} />
+          ))}
+        </div>
       </Modal>
     </header>
   )
