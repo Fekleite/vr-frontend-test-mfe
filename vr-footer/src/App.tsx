@@ -1,5 +1,9 @@
+import Footer from "./components/Footer";
+
 export function App() {
   return (
-    <div>VR Footer</div>
+    <div>
+      <Footer />
+    </div>
   )
 }
