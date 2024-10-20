@@ -2,7 +2,7 @@
   "name": "vr-frontend-test-mfe",
   "version": "1.0.0",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "license": "ISC",
   "devDependencies": {
