@@ -13,7 +13,7 @@ import { useStore } from 'vr-commerce/store'
 export default function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false)
 
-  const { cartItems } = useStore()
+  const { cartItems } = useStore() || { cartItems: [] };
 
   function handleOpenCart() {
     setIsCartOpen(true)
