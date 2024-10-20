@@ -4,12 +4,15 @@ import { getProducts } from "../../api/get-products"
 
 import { Skeleton } from "../Skeleton"
 
+import { useStore } from 'vr-commerce/store'
 
 export default function Cards() {
   const { data, isLoading } = useQuery({
     queryFn: () => getProducts(),
     queryKey: ['products']
   })
+
+  const { addProductOnCart } = useStore()
 
   function formatPrice(price: number) {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price)
@@ -41,6 +44,7 @@ export default function Cards() {
               <button
                 type="button"
                 className="h-12 px-4 rounded-full bg-brand hover:opacity-80 duration-200 text-neutral-50 text-sm font-semibold"
+                onClick={() => addProductOnCart(product)}
               >
                 Comprar
               </button>
