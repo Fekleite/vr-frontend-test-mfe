@@ -15,9 +15,6 @@ export default defineConfig({
       exposes: {
         "./Header": "./src/components/Header"
       },
-      remotes: {
-        'vr-commerce': "http://localhost:5173/assets/remoteEntry.js",
-      },
       shared: ["react", "react-dom", "tailwindcss"],
     }),
     react()
