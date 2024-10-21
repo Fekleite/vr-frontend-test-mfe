@@ -26,8 +26,8 @@ export default function Cards({ addProductOnCart }: ICardsProps) {
   }
 
   return (
-    <div className="w-full max-w-[1440px] px-12 mx-auto my-8">
-      <div className="w-full grid grid-cols-3 gap-10">
+    <div className="w-full max-w-[1440px] px-4 lg:px-12 mx-auto my-8">
+      <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:gap-8 xl:grid-cols-3 xl:gap-10">
         {data?.products.map((product) => (
           <div className="border border-neutral-200 rounded-lg p-8" key={product.id}>
             <div className="w-80 h-48 mx-auto overflow-hidden flex justify-center">
