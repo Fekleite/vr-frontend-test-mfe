@@ -1,19 +1,19 @@
 import { useState } from 'react'
 
-import { IProduct } from '../../@types/product'
-
 import logo from '../../assets/logo-white.png'
 
 import { BagIcon } from '../BagIcon'
 import { Modal } from '../Modal'
 import { CartItem } from '../CartItem'
 
-import { useStore } from 'vr-commerce/store'
+import { IProduct } from '../../@types/product'
 
-export default function Header() {
+interface IHeaderProps {
+  cartItems: IProduct[]
+}
+
+export default function Header({ cartItems }: IHeaderProps) {
   const [isCartOpen, setIsCartOpen] = useState(false)
-
-  const { cartItems } = useStore() || { cartItems: [] };
 
   function handleOpenCart() {
     setIsCartOpen(true)
@@ -47,7 +47,7 @@ export default function Header() {
 
       <Modal title='Compras' isOpen={isCartOpen} onClose={handleCloseCart}>
         <div className='h-full max-h-full overflow-y-auto flex flex-col gap-2'>
-          {cartItems?.map((cartItem: IProduct) => (
+          {cartItems?.map((cartItem) => (
             <CartItem product={cartItem} />
           ))}
         </div>
