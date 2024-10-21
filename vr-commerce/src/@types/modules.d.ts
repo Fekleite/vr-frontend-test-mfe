@@ -1,5 +1,10 @@
 declare module "vr-header/Header" {
-  const Header: React.ComponentType;
+  import { IProduct } from './product'
+  interface HeaderProps {
+    cartItems: IProduct[]
+  }
+
+  const Header: React.ComponentType<HeaderProps>;
   export default Header;
 }
 
@@ -9,7 +14,12 @@ declare module "vr-footer/Footer" {
 }
 
 declare module "vr-cards/Cards" {
-  const Cards: React.ComponentType;
+  import { IProduct } from './product'
+  interface CardsProps {
+    addProductOnCart : (product: IProduct) => void
+  }
+
+  const Cards: React.ComponentType<CardsProps>;
   export default Cards;
 }
 
