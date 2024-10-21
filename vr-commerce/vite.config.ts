@@ -17,9 +17,6 @@ export default defineConfig({
         'vr-footer': "http://localhost:5175/assets/remoteEntry.js",
         'vr-cards': "http://localhost:5176/assets/remoteEntry.js",
       },
-      exposes: {
-        './store': "./src/store"
-      },
       shared: ["react", "react-dom", "tailwindcss", "zustand"]
     }),
     react()
