@@ -1,18 +1,19 @@
 import { useQuery } from "@tanstack/react-query"
 
+import { IProduct } from "../../@types/product"
 import { getProducts } from "../../api/get-products"
 
 import { Skeleton } from "../Skeleton"
 
-import { useStore } from 'vr-commerce/store'
+interface ICardsProps {
+  addProductOnCart: (product: IProduct) => void
+}
 
-export default function Cards() {
+export default function Cards({ addProductOnCart }: ICardsProps) {
   const { data, isLoading } = useQuery({
     queryFn: () => getProducts(),
     queryKey: ['products']
   })
-
-  const { addProductOnCart } = useStore()
 
   function formatPrice(price: number) {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(price)
