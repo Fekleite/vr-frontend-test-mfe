@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react"
+import { ErrorBoundary } from "react-error-boundary"
 
 import { Fallback } from "./components/Fallback"
+import { ErrorFallback } from "./components/ErrorFallback"
 
 import { useCartStore } from "./store"
 import { IProduct } from "./@types/product"
@@ -14,7 +16,7 @@ export function App() {
   const { cartItems, addProductOnCart} = useCartStore()
 
   return (
-    <>
+    <ErrorBoundary fallback={<ErrorFallback />}>
       <Suspense fallback={<Fallback />}>
         <Header cartItems={cartItems} />
       </Suspense>
@@ -30,6 +32,6 @@ export function App() {
       <Suspense fallback={<Fallback />}>
         <Footer />
       </Suspense>
-    </>
+    </ErrorBoundary>
   )
 }
