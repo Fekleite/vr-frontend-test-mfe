@@ -25,7 +25,7 @@ export default function Header({ cartItems }: IHeaderProps) {
 
   return (
     <header className='w-full bg-brand py-4'>
-      <div className='w-full max-w-[1440px] px-12 mx-auto flex justify-between items-center'>
+      <div className='w-full max-w-[1440px] px-4 lg:px-12 mx-auto flex justify-between items-center'>
         <img src={logo} alt="VR" className='w-8 h-8' />
 
         <div className='flex relative'>
