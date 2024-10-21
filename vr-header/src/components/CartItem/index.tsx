@@ -13,7 +13,7 @@ export function CartItem({ product }: ICartItemProps) {
   }
 
   return (
-    <div className="w-full py-2 px-4 border border-brand rounded-lg flex justify-between items-center gap-4">
+    <div data-testid="vr-header-cart-item-test" className="w-full py-2 px-4 border border-brand rounded-lg flex justify-between items-center gap-4">
       <div className="flex items-center gap-10">
         <img
           src={product.images[0]}

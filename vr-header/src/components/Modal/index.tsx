@@ -20,12 +20,13 @@ export function Modal({ title, children, isOpen, onClose }: IModalProps) {
           className={`bg-neutral-900 opacity-50 absolute inset-0 ${isOpen ? 'block' : 'hidden'}`}
         />
         <div
+          data-testid="vr-header-modal-test"
           className={`w-full max-w-full xl:max-w-2xl lg:max-w-lg md:max-w-md h-screen flex flex-col px-4 lg:px-10 py-2 lg:py-4 bg-white relative transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <header className="flex items-center justify-between py-4 lg:py-6 border-b border-neutral-100">
             <h3 className="text-2xl text-neutral-900 font-bold">{title}</h3>
 
-            <button type="button" className="p-2" onClick={onClose}>
+            <button data-testid="vr-header-modal-close-button-test" type="button" className="p-2" onClick={onClose}>
               <CloseIcon />
             </button>
           </header>
