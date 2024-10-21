@@ -18,7 +18,7 @@ Desenvolva uma aplicação em React JS que seja um micro front-end utilizando Mo
 
 ## Descrição dos Apps
 
-- **vr-commerce (host/remote):** app principal, onde a aplicação é montada e o estado é compratilhado;
+- **vr-commerce (host):** app principal, onde a aplicação é montada e o estado onde o estado global está;
 - **vr-header (remote):** app header, onde existe a interação com o modal;
 - **vr-footer (remote):** app footer;
 - **vr-cards (remote):** app cards, onde está a consulta a API e interação para adicionar produtos ao carrinho.
