@@ -1,33 +1,35 @@
-import { fireEvent, render } from "@testing-library/react"
+import { fireEvent, render } from '@testing-library/react';
 
-import { Modal } from "."
+import { Modal } from '.';
 
-describe("Modal", () => {
-  const modalTitle = "Compras"
-  const handleCloseModal = vi.fn()
+describe('Modal', () => {
+  const modalTitle = 'Compras';
+  const handleCloseModal = vi.fn();
 
-  it("should display component correctly", () => {
+  it('should display component correctly', () => {
     const wrapper = render(
       <Modal title={modalTitle} onClose={handleCloseModal} isOpen={true}>
         <span>Produto 1</span>
-      </Modal>
-    )
+      </Modal>,
+    );
 
-    const modalElement = wrapper.getByTestId("vr-header-modal-test")
+    const modalElement = wrapper.getByTestId('vr-header-modal-test');
 
-    expect(modalElement).toBeInTheDocument()
-  })
+    expect(modalElement).toBeInTheDocument();
+  });
 
-  it("should calls handleCloseModal when clicks on close button", () => {
+  it('should calls handleCloseModal when clicks on close button', () => {
     const wrapper = render(
       <Modal title={modalTitle} onClose={handleCloseModal} isOpen={true}>
         <span>Produto 1</span>
-      </Modal>
-    )
+      </Modal>,
+    );
 
-    const closeCartButton = wrapper.getByTestId("vr-header-modal-close-button-test")
-    fireEvent.click(closeCartButton)
+    const closeCartButton = wrapper.getByTestId(
+      'vr-header-modal-close-button-test',
+    );
+    fireEvent.click(closeCartButton);
 
-    expect(handleCloseModal).toHaveBeenCalled()
-  })
-})
+    expect(handleCloseModal).toHaveBeenCalled();
+  });
+});

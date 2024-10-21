@@ -40,7 +40,10 @@ export default function Header({ cartItems }: IHeaderProps) {
             <span className="sr-only">Sacola</span>
           </button>
 
-          <span data-testid="vr-header-cart-number-test" className="absolute -right-2 -top-2 bg-neutral-50 w-5 h-5 rounded-full text-xs text-neutral-900 font-semibold flex justify-center items-center">
+          <span
+            data-testid="vr-header-cart-number-test"
+            className="absolute -right-2 -top-2 bg-neutral-50 w-5 h-5 rounded-full text-xs text-neutral-900 font-semibold flex justify-center items-center"
+          >
             {cartItems?.length}
           </span>
         </div>
@@ -48,7 +51,9 @@ export default function Header({ cartItems }: IHeaderProps) {
 
       <Modal title="Compras" isOpen={isCartOpen} onClose={handleCloseCart}>
         <div className="h-full max-h-full overflow-y-auto flex flex-col gap-2">
-          {cartItems?.map((cartItem) => <CartItem key={cartItem.id} product={cartItem} />)}
+          {cartItems?.map((cartItem) => (
+            <CartItem key={cartItem.id} product={cartItem} />
+          ))}
         </div>
       </Modal>
     </header>

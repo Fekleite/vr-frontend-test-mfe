@@ -26,7 +26,12 @@ export function Modal({ title, children, isOpen, onClose }: IModalProps) {
           <header className="flex items-center justify-between py-4 lg:py-6 border-b border-neutral-100">
             <h3 className="text-2xl text-neutral-900 font-bold">{title}</h3>
 
-            <button data-testid="vr-header-modal-close-button-test" type="button" className="p-2" onClick={onClose}>
+            <button
+              data-testid="vr-header-modal-close-button-test"
+              type="button"
+              className="p-2"
+              onClick={onClose}
+            >
               <CloseIcon />
             </button>
           </header>
