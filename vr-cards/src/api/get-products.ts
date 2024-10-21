@@ -1,12 +1,5 @@
+import { IProduct } from "../@types/product"
 import { api } from "../lib/axios"
-
-export interface IProduct {
-  id: number
-  title: string
-  description: string
-  price: number
-  images: string[]
-}
 
 interface GetProductsResponse {
   products: IProduct[]
