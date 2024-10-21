@@ -1,13 +1,13 @@
-import { IProduct } from "./@types/product";
+import { IProduct } from './@types/product';
 
-import Header from "./components/Header";
+import Header from './components/Header';
 
 export function App() {
-  const cartItems: IProduct[] = []
+  const cartItems: IProduct[] = [];
 
   return (
     <div>
       <Header cartItems={cartItems} />
     </div>
-  )
+  );
 }

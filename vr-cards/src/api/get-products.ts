@@ -1,12 +1,12 @@
-import { IProduct } from "../@types/product"
-import { api } from "../lib/axios"
+import { IProduct } from '../@types/product';
+import { api } from '../lib/axios';
 
 interface GetProductsResponse {
-  products: IProduct[]
+  products: IProduct[];
 }
 
 export async function getProducts() {
-  const response = await api.get<GetProductsResponse>('/products')
+  const response = await api.get<GetProductsResponse>('/products');
 
-  return response.data
+  return response.data;
 }
