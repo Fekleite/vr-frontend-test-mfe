@@ -1,18 +1,13 @@
 import { create } from "zustand";
 
-interface IProduct {
-  id: number
-  title: string
-  price: number
-  images: string[]
-}
+import { IProduct } from "../@types/product";
 
 interface ICartState {
   cartItems: IProduct[]
   addProductOnCart: (product: IProduct) => void
 }
 
-export const useStore = create<ICartState>((set) => {
+export const useCartStore = create<ICartState>((set) => {
   return {
     cartItems: [],
     addProductOnCart: (product: IProduct) => {
