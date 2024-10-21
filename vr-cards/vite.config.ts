@@ -16,9 +16,6 @@ export default defineConfig({
         "./Cards": "./src/components/Cards",
         "./CardsWrapper": "./src/components/CardsWrapper",
       },
-      remotes: {
-        'vr-commerce': "http://localhost:5173/assets/remoteEntry.js",
-      },
       shared: ["react", "react-dom", "tailwindcss"],
     }),
     react()
