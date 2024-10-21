@@ -50,12 +50,6 @@ Desenvolva uma aplicação em React JS que seja um micro front-end utilizando Mo
   $ npm run preview
 ```
 
-### Executar testes
-
-```bash
-  $ npm run test
-```
-
 ### Observações
 
 Para realizar commits dentro do padrão necessário instalar dependências gerais (base do projeto).
