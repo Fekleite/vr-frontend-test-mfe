@@ -14,16 +14,22 @@ export function App() {
   const { cartItems, addProductOnCart} = useCartStore()
 
   return (
-    <Suspense fallback={<Fallback />}>
-      <Header cartItems={cartItems} />
+    <>
+      <Suspense fallback={<Fallback />}>
+        <Header cartItems={cartItems} />
+      </Suspense>
 
       <div className="w-full my-10">
-        <CardsWrapper>
-          <Cards addProductOnCart={(product: IProduct) => addProductOnCart(product)} />
-        </CardsWrapper>
+        <Suspense fallback={<Fallback />}>
+          <CardsWrapper>
+            <Cards addProductOnCart={(product: IProduct) => addProductOnCart(product)} />
+          </CardsWrapper>
+        </Suspense>
       </div>
 
-      <Footer />
-    </Suspense>
+      <Suspense fallback={<Fallback />}>
+        <Footer />
+      </Suspense>
+    </>
   )
 }
